@@ -28,20 +28,20 @@
             var li=document.createElement("li");
             let word=array1[i];
             let contador=0;
-            let textou="";
-            let posicion=[];
+            let posiciones="";
+            let array_posicion=[];
             for(let j=0;j<word.length;j++){
                 
                 if(word[j]==char){
                 contador++;
-                posicion.push(j);
+                array_posicion.push(j);
                
             }
             }
-            for(let x=0;x<posicion.length;x++){  
-                  textou+=posicion[x];    
+            for(let x=0;x<array_posicion.length;x++){  
+                  posiciones+=array_posicion[x];    
             }
-            var text="en la palabra: "+word+",el caracter "+"-"+char+"-"+" surt "+contador+" cops.surt a les posicions: " +textou;
+            var text="en la palabra: "+word+",el caracter "+"-"+char+"-"+" surt "+contador+" cops.surt a les posicions: " +posiciones;
             li.textContent=text;
             lista.appendChild(li);
         }
