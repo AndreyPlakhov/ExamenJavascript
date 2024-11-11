@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+        <label for="">text</label>
+        <input type="text" id="texto"><br>
+        <label for="">caracter</label>
+        <input type="text" id="caracter"><br>
+        <button onclick="empezar()">iniciar</button>
+
+        <ul id="lista"></ul>
+    
+    <script>
+        function empezar(){
+        var texto=document.getElementById("texto").value;
+        var text=texto.toLowerCase();
+        let char=document.getElementById("caracter").value;
+
+        var lista=document.getElementById("lista");
+        let array1 = text.split(" ");
+        console.log(array1);
+       
+        
+        for(let i=0;i<array1.length;i++){
+            var li=document.createElement("li");
+            let word=array1[i];
+            let contador=0;
+            let posicion=[];
+            for(let j=0;j<word.length;j++){
+                
+                if(word[j]==char){
+                contador++;
+                posicion.push(j);
+               
+            }
+            }
+            var text=word+" "+"-"+char+"-"+" surt "+contador+" cops.surt a les posicions: "+posicion[0];
+            li.textContent=text;
+            lista.appendChild(li);
+        }
+       
+        }
+   
+      
+
+    </script>
+</body>
+</html>
