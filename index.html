@@ -24,12 +24,11 @@
         var lista=document.getElementById("lista");
         let array1 = text.split(" ");
         console.log(array1);
-       
-        
         for(let i=0;i<array1.length;i++){
             var li=document.createElement("li");
             let word=array1[i];
             let contador=0;
+            let textou="";
             let posicion=[];
             for(let j=0;j<word.length;j++){
                 
@@ -39,7 +38,10 @@
                
             }
             }
-            var text=word+" "+"-"+char+"-"+" surt "+contador+" cops.surt a les posicions: "+posicion[0];
+            for(let x=0;x<posicion.length;x++){  
+                  textou+=posicion[x];    
+            }
+            var text="en la palabra: "+word+",el caracter "+"-"+char+"-"+" surt "+contador+" cops.surt a les posicions: " +textou;
             li.textContent=text;
             lista.appendChild(li);
         }
